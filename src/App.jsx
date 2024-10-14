@@ -1,7 +1,12 @@
 import "./App.css";
+import GenAuthForm from "./components/GenAuthForm/GenAuthForm";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <GenAuthForm />
+    </>
+  );
 }
 
 export default App;
