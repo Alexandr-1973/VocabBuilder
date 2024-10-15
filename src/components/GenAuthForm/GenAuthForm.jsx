@@ -42,32 +42,28 @@ const GenAuthForm = () => {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <div className={css.genDiv}>
+    <div
+      className={css[`${authToggle ? "genDivRegistration" : "genDivLogin"}`]}
+    >
+<div>
+
       <picture className={css.img}>
         <source
           srcSet="/illustration-desk-1x.jpg 1x, /illustration-desk-2x.jpg 2x"
           media="(min-width: 1440px)"
         />
-
         <source
-          srcSet="
-                      /illustration-mob-1x.jpg 1x,
-                      /illustration-mob-2x.jpg 2x
-                    "
+          srcSet="/illustration-mob-1x.jpg 1x, /illustration-mob-2x.jpg 2x"
           media="(max-width: 767px)"
         />
-        <img
-          //   className={css.img}
-          src="/illustration-mob-1x.jpg"
-          alt="Boy and girl read books"
-          //   width="360"
-          //   height="300"
-        />
+        <img src="/illustration-mob-1x.jpg" alt="Boy and girl read books" />
       </picture>
 
-      {!authToggle && (
-        <p className={css.loginLi}>Word · Translation · Grammar · Progress</p>
-      )}
+      <p className={css[authToggle ? "decorRegistration" : "decorLogin"]}>
+        Word · Translation · Grammar · Progress
+      </p>
+
+      </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className={css.form}>
         <h2 className={css.h}>
@@ -127,11 +123,17 @@ const GenAuthForm = () => {
         </div>
       </form>
 
-      <p className={css.lowerLi} style={{ marginTop: !authToggle && "172px" }}>
+      {/* <p className={css.lowerLi} style={{ marginTop: !authToggle && "172px" }}>
         Word · Translation · Grammar · Progress
-      </p>
+      </p> */}
 
-      <img className={css.blur} src="/blur.svg" alt="green blur" />
+      {/* <img className={css.blur} src="/blur-desk.svg" alt="green blur" /> */}
+
+      <picture className={css.blur}>
+        <source srcSet="/blur-desk.svg" media="(min-width: 1440px)" />
+        <source srcSet="/blur.svg" media="(min-width: 768px)" />
+        <img src="" alt="" />
+      </picture>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-.genDiv {
+.genDivLogin {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,6 +6,16 @@
   background-color: #f8f8f8;
   position: relative;
 }
+
+.genDivRegistration {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8;
+  position: relative;
+}
+
 
 .img {
   width: 247px;
@@ -38,8 +48,13 @@
   padding-right: 4px;
 }
 
-.loginLi {
+.decorRegistration {
   /* display: flex; */
+  display: none;
+ 
+}
+
+.decorLogin {
   margin-block-start: 0;
   margin-block-end: 0;
   font-family: "MacPaw Fixel Display", sans-serif;
@@ -152,7 +167,18 @@ align-items: center; */
   margin-bottom: 57px;
 }
 
+.blur {display: none;}
+
 @media screen and (min-width: 768px) {
+
+.genDivLogin {
+  flex-direction: column-reverse;
+}
+
+.genDivRegistration {
+  flex-direction: column-reverse;
+}
+
   .img {
     display: none;
   }
@@ -198,15 +224,40 @@ align-items: center; */
     margin-bottom: 106px;
   }
 
-  .loginLi {
-    display: none;
-  }
+.decorLogin {
+  display: block;
+  font-family: "MacPaw Fixel Display", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: rgba(18, 20, 23, 0.8);
+  margin-top: 98px;
+  margin-bottom: 106px;
+} 
+
+.decorRegistration {
+  display: block;
+  font-family: "MacPaw Fixel Display", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: rgba(18, 20, 23, 0.8);
+  margin-top: 98px;
+  margin-bottom: 106px;
+} 
+
+
 
   .blur {
+    
+    display: block;
     position: absolute;
     bottom: 0;
     right: 0;
     pointer-events: none;
+    
   }
 }
 
@@ -214,18 +265,69 @@ align-items: center; */
   .img {
     display: block;
     width: 498px;
-    height: 435px;
+    height: 475px;
   }
-  .genDiv {
+  .genDivLogin {
     flex-direction: row-reverse;
     gap: 80px;
+    padding-bottom: 104px;
+    align-items: center;
+  }
+
+  .genDivRegistration {
+    flex-direction: row-reverse;
+    gap: 80px;
+    padding-bottom: 80px;
+    align-items: center;
+
   }
 
   .lowerLi {
     display: none;
   }
 
-  .blur {
-    display: none;
+  .decorRegistration {
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-family: "MacPaw Fixel Display", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    color: rgba(18, 20, 23, 0.8);
+    margin-bottom: 46px;
+    margin-top: 8px;
   }
+
+  .decorLogin {
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-family: "MacPaw Fixel Display", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    color: rgba(18, 20, 23, 0.8);
+    margin-bottom: 46px;
+    margin-top: 8px;
+  }
+  
+ 
+
+
+
+  /* .decorRegistration {
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-family: "MacPaw Fixel Display", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    color: rgba(18, 20, 23, 0.8);
+    margin-bottom: 46px;
+    margin-top: 8px;
+  } */
+
+  
 }
