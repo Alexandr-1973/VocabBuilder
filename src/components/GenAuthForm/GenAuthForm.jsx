@@ -44,17 +44,11 @@ const GenAuthForm = () => {
   return (
     <div className={css.genDiv}>
       <picture className={css.img}>
-        {/* <source
-          srcset="./images/img6.jpg 1x, ./images/img6-2x-opt.jpg 2x"
-          media="(min-width: 1158px)"
-        />
         <source
-          srcset="
-                      ./images/img6-tablet-opt.jpg    1x,
-                      ./images/img6-tablet-2x-opt.jpg 2x
-                    "
-          media="(min-width: 768px)"
-        /> */}
+          srcSet="/illustration-desk-1x.jpg 1x, /illustration-desk-2x.jpg 2x"
+          media="(min-width: 1440px)"
+        />
+
         <source
           srcSet="
                       /illustration-mob-1x.jpg 1x,
@@ -71,14 +65,16 @@ const GenAuthForm = () => {
         />
       </picture>
 
-      {!authToggle && <p className={css.loginLi}>Word  ·  Translation  ·  Grammar  ·  Progress</p>}
+      {!authToggle && (
+        <p className={css.loginLi}>Word · Translation · Grammar · Progress</p>
+      )}
 
       <form onSubmit={handleSubmit(onSubmit)} className={css.form}>
         <h2 className={css.h}>
           {authToggle && "Register"}
           {!authToggle && "Login"}
         </h2>
-        <p className={css.p} style={{"marginBottom":!authToggle&&"40px"}}>
+        <p className={css.p} style={{ marginBottom: authToggle && "16px" }}>
           {authToggle &&
             "To start using our services, please fill out the registration form below. All fields are mandatory:"}
           {!authToggle &&
@@ -123,12 +119,19 @@ const GenAuthForm = () => {
           {!authToggle && "Login"}
         </button>
         {/* <Toaster /> */}
-        <p onClick={() => setAuthToggle(!authToggle)} className={css.toggleP}>
-        {!authToggle && "Register"}
-        {authToggle && "Login"}
-      </p>
+        <div className={css.toggleDiv}>
+          <p onClick={() => setAuthToggle(!authToggle)} className={css.toggleP}>
+            {!authToggle && "Register"}
+            {authToggle && "Login"}
+          </p>
+        </div>
       </form>
-      
+
+      <p className={css.lowerLi} style={{ marginTop: !authToggle && "172px" }}>
+        Word · Translation · Grammar · Progress
+      </p>
+
+      <img className={css.blur} src="/blur.svg" alt="green blur" />
     </div>
   );
 };
