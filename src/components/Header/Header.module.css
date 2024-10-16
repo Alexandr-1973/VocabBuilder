@@ -1,0 +1,49 @@
+.nav {
+  display: flex;
+  align-items: center;
+
+  padding: 16px;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+  margin-right: 16px;
+}
+
+.logoLink {
+  font-family: "MacPaw Fixel Display", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.33333;
+  color: #121417;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    padding: 24px 32px;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+  }
+
+  .logoLink {
+    font-size: 22px;
+    line-height: 1.45455;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .nav {
+    padding: 20px 100px;
+	
+	
+	
+  }
+}
