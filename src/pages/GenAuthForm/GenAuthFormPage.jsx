@@ -1,5 +1,5 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import css from "./GenAuthForm.module.css";
+import css from "./GenAuthFormPage.module.css";
 import { useForm } from "react-hook-form";
 import { LuEyeOff } from "react-icons/lu";
 import { LuEye } from "react-icons/lu";
@@ -29,7 +29,7 @@ const schemaLogin = yup
   })
   .required();
 
-const GenAuthForm = () => {
+const GenAuthFormPage = () => {
   const [type, setType] = useState("password");
   // const [authToggle, setAuthToggle] = useState(true);
   const location = useLocation();
@@ -150,4 +150,4 @@ const GenAuthForm = () => {
   );
 };
 
-export default GenAuthForm;
+export default GenAuthFormPage;

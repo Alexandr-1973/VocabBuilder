@@ -1,6 +1,6 @@
 
 import "./App.css";
-import GenAuthForm from "./components/GenAuthForm/GenAuthForm";
+import GenAuthFormPage from "./pages/GenAuthForm/GenAuthFormPage";
 import Header from "./components/Header/Header";
 import { Routes, Route, Navigate } from "react-router-dom";
 
@@ -14,8 +14,8 @@ function App() {
       <Routes>
 
       <Route path="/" element={<Navigate to="/register" />} />
-        <Route path="/register" element={<GenAuthForm />} />
-        <Route path="/login" element={<GenAuthForm />} />
+        <Route path="/register" element={<GenAuthFormPage />} />
+        <Route path="/login" element={<GenAuthFormPage />} />
          
          {/* {routes.map((path) => (
           <Route key={path} path={path} element={<GenAuthForm />} />
