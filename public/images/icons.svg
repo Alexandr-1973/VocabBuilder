@@ -24,5 +24,10 @@
 <path fill="#d80027" style="fill: var(--color7, #d80027)" d="M11.826 11.826v-0l-7.14-7.14c-0.328 0.328-0.642 0.671-0.941 1.027l6.113 6.113h1.968z"></path>
 <path fill="#d80027" style="fill: var(--color7, #d80027)" d="M20.174 11.826l7.14-7.14c-0.328-0.328-0.671-0.642-1.027-0.94l-6.113 6.113v1.968z"></path>
 </symbol>
+<symbol id="icon-Nav" viewBox="0 0 46 32">
+<path stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.4286" d="M8.671 5.074h35.329"></path>
+<path stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.4286" d="M8.671 24.468h35.329"></path>
+<path stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.4286" d="M19.603 14.771h24.398"></path>
+</symbol>
 </defs>
 </svg>

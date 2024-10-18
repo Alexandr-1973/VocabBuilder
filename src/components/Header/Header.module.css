@@ -3,6 +3,9 @@
   align-items: center;
 
   padding: 16px;
+  max-width: 100%;
+  justify-content: space-between;
+  /* gap: 10vw; */
 }
 
 .logo {
@@ -21,10 +24,65 @@
   display: flex;
   align-items: center;
 }
+.linksUl {
+  display: none;
+}
+
+.navIconLi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.navIcon {
+  width: 32px;
+  height: 22px;
+  stroke: #121417;
+  cursor: pointer;
+  /* fill: black; */
+
+  /* padding: 0; */
+}
+
+.logoutUl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logout {
+  display: none;
+}
+
+.name {
+  font-family: "MacPaw Fixel Display", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #121417;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 8px;
+}
+
+.userIcon {
+  fill: rgba(252, 252, 252, 0.7);
+  background-color: #85aa9f;
+  border-radius: 30px;
+  width: 36px;
+  height: 36px;
+  padding: 12px;
+}
 
 @media screen and (min-width: 768px) {
   .nav {
     padding: 24px 32px;
+    /* width: 704px; */
+    /* max-width: 100%; */
+    /* gap: 309px; */
   }
 
   .logo {
@@ -37,13 +95,103 @@
     font-size: 22px;
     line-height: 1.45455;
   }
+
+  .name {
+    font-size: 20px;
+    gap: 16px;
+  }
+  
+  .userIcon {
+    width: 48px;
+    height: 48px;
+    padding: 16px;
+  }
+  
+  .logoutUl {
+    gap: 28px;
+  }
+
+  .navIcon {
+    width: 40px;
+    height: 28px;
+    stroke: #121417;
+    /* fill: black; */
+  
+    /* padding: 0; */
+  }
+
+
 }
+
+
 
 @media screen and (min-width: 1440px) {
   .nav {
     padding: 20px 100px;
-	
-	
-	
+    display: flex;
+    justify-content: space-between;
+    /* max-width: 100%; */
+
+    /* gap: 257px; */
+  }
+
+  .linksUl {
+    display: flex;
+    gap: 28px;
+  }
+
+  .link {
+    text-decoration: none;
+    font-family: "MacPaw Fixel Display", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #121417;
+  }
+
+  .logoutUl {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+
+  .name {
+    gap: 10px;
+  }
+
+  .logout {
+    font-family: "MacPaw Fixel Display", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #121417;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .arrowRightIcon {
+    stroke: "#121417";
+    width: 16px;
+    height: 16px;
+  }
+
+  .linkActive {
+    text-decoration: none;
+    border-radius: 15px;
+    padding: 12px 20px;
+    width: 110px;
+    height: 43px;
+    background: #85aa9f;
+    font-family: "MacPaw Fixel Display", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #fcfcfc;
+  }
+
+  .navIcon {
+    display: none;
   }
 }
