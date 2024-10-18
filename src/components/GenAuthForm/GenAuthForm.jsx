@@ -5,7 +5,8 @@ import { LuEyeOff } from "react-icons/lu";
 import { LuEye } from "react-icons/lu";
 
 import * as yup from "yup";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const schemaRegistration = yup
   .object({
@@ -30,7 +31,15 @@ const schemaLogin = yup
 
 const GenAuthForm = () => {
   const [type, setType] = useState("password");
-  const [authToggle, setAuthToggle] = useState(true);
+  // const [authToggle, setAuthToggle] = useState(true);
+  const location = useLocation();
+  const navigate=useNavigate();
+
+  // useEffect(() => {
+  //   location.pathname === "/login"
+  //     ? setAuthToggle(false)
+  //     : setAuthToggle(true);
+  // },[location]);
 
   const {
     register,
@@ -43,9 +52,13 @@ const GenAuthForm = () => {
 
   return (
     <div
-      className={css[`${authToggle ? "genDivRegistration" : "genDivLogin"}`]}
+      className={css[location.pathname === "/login"
+        // authToggle
+         ? "genDivLogin" : "genDivRegistration"]}
     >
-      <div className={css[authToggle ? "picDivRegistration" : "picDivLogin"]}>
+      <div className={css[location.pathname === "/login"
+        // authToggle
+         ? "picDivLogin"  : "picDivRegistration"]}>
         <picture className={css.img}>
           <source
             srcSet="/images/illustration-desk-1x.jpg 1x, /images/illustration-desk-2x.jpg 2x"
@@ -55,25 +68,32 @@ const GenAuthForm = () => {
             srcSet="/images/illustration-mob-1x.jpg 1x, /images/illustration-mob-2x.jpg 2x"
             media="(max-width: 767px)"
           />
-          <img src="/images/illustration-mob-1x.jpg" alt="Boy and girl read books" />
+          <img
+            src="/images/illustration-mob-1x.jpg"
+            alt="Boy and girl read books"
+          />
         </picture>
 
-        <p className={css[authToggle ? "decorRegistration" : "decorLogin"]}>
+        <p className={css[location.pathname === "/login"
+          // authToggle
+           ? "decorLogin" : "decorRegistration"]}>
           Word · Translation · Grammar · Progress
         </p>
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className={css.form}>
         <h2 className={css.h}>
-          {authToggle && "Register"}
-          {!authToggle && "Login"}
+          {location.pathname !== "/login" && "Register"}
+          {location.pathname === "/login" && "Login"}
         </h2>
-        <p className={css[authToggle ? "pRegistration" : "pLogin"]}>
-          {authToggle &&
+        <p className={css[location.pathname === "/login"
+          // authToggle
+           ? "pLogin" : "pRegistration"]}>
+          {location.pathname !== "/login" &&
             "To start using our services, please fill out the registration form below. All fields are mandatory:"}
-          {!authToggle &&
+          {location.pathname === "/login" &&
             "Please enter your login details to continue using our service:"}
         </p>
-        {authToggle && (
+        {location.pathname !== "/login" && (
           <>
             <input
               {...register("name")}
@@ -108,14 +128,16 @@ const GenAuthForm = () => {
         <p className={css.yupPassword}>{errors.password?.message}</p>
 
         <button type="submit" className={css.btn}>
-          {authToggle && "Register"}
-          {!authToggle && "Login"}
+          {location.pathname !== "/login" && "Register"}
+          {location.pathname === "/login" && "Login"}
         </button>
         {/* <Toaster /> */}
         <div className={css.toggleDiv}>
-          <p onClick={() => setAuthToggle(!authToggle)} className={css.toggleP}>
-            {!authToggle && "Register"}
-            {authToggle && "Login"}
+          <p onClick={() => location.pathname === "/login"? navigate("/register"):navigate("/login")
+            //  setAuthToggle(!authToggle)
+             } className={css.toggleP}>
+            {location.pathname === "/login" && "Register"}
+            {location.pathname !== "/login" && "Login"}
           </p>
         </div>
       </form>

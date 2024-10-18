@@ -1,16 +1,31 @@
+
 import "./App.css";
 import GenAuthForm from "./components/GenAuthForm/GenAuthForm";
 import Header from "./components/Header/Header";
-
+import { Routes, Route, Navigate } from "react-router-dom";
 
 function App() {
-
-
+  // const routes = ['/', '/register', '/login']
+  // const [authToggle, setAuthToggle] = useState(true);
 
   return (
     <>
-    <Header />
-      <GenAuthForm />
+      <Header />
+      <Routes>
+
+      <Route path="/" element={<Navigate to="/register" />} />
+        <Route path="/register" element={<GenAuthForm />} />
+        <Route path="/login" element={<GenAuthForm />} />
+         
+         {/* {routes.map((path) => (
+          <Route key={path} path={path} element={<GenAuthForm />} />
+        ))} */}
+      {/* <Route path={["/", "/register", "/login"]} element={<GenAuthForm />} /> */}
+        {/* <Route path="/register" element={<GenAuthForm />} />
+        <Route path="/login" element={<GenAuthForm />} /> */}
+
+      
+      </Routes>
     </>
   );
 }
