@@ -1,0 +1,20 @@
+.navIcon {
+  width: 32px;
+  height: 22px;
+  stroke: #121417;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .navIcon {
+    width: 40px;
+    height: 28px;
+    stroke: #121417;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .navIcon {
+    display: none;
+  }
+}
