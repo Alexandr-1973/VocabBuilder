@@ -24,7 +24,7 @@ const Header = () => {
           <UserBar />
         </li>
         <li>
-          <LogOut />
+          <LogOut element="header"/>
         </li>
         <li className={css.navIconLi}>
           <NavMenu />

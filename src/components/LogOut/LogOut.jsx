@@ -1,9 +1,9 @@
 import { FaArrowRight } from "react-icons/fa6";
 import css from "./LogOut.module.css";
 
-const LogOut = () => {
+const LogOut = ({element}) => {
   return (
-    <p className={css.logout}>
+    <p className={element==="header"?css.logoutHeader:css.logoutModal}>
       Log out
       <FaArrowRight className={css.arrowRightIcon} />
     </p>

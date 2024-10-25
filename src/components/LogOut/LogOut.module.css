@@ -1,9 +1,12 @@
-.logout {
+.logoutHeader {
   display: none;
+}
+.logoutModal {
+  
 }
 
 @media screen and (min-width: 1440px) {
-  .logout {
+  .logoutHeader {
     font-family: "MacPaw Fixel Display", sans-serif;
     font-weight: 500;
     font-size: 16px;
