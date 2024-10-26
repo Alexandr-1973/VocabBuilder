@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 import css from "./UserNav.module.css";
 
-const UserNav = () => {
+const UserNav = ({element}) => {
   const pagesArray = ["Dictionary", "Recommend", "Training"];
   return (
-    <ul className={css.linksUl}>
+    <ul className={`${css.linksUl} ${css[`link${element}`]}`}>
       {pagesArray.map((page, index) => {
         return (
           <li key={index}>

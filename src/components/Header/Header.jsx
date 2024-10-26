@@ -16,15 +16,15 @@ const Header = () => {
         VocabBuilder
       </Link>
       <div className={css.forHiddenUserNav}>
-        <UserNav />
+        <UserNav element="Header"/>
       </div>
 
       <ul className={css.logoutUl}>
         <li>
-          <UserBar />
+          <UserBar element="Header"/>
         </li>
         <li>
-          <LogOut element="header"/>
+          <LogOut element="Header"/>
         </li>
         <li className={css.navIconLi}>
           <NavMenu />

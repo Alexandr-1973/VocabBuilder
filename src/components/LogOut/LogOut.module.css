@@ -1,24 +1,38 @@
+.logout {
+  font-family: "MacPaw Fixel Display", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
 .logoutHeader {
   display: none;
 }
 .logoutModal {
-  
+  color: #fcfcfc;
+}
+
+.arrowRightIcon {
+  stroke: #fcfcfc;
+  width: 16px;
+  height: 16px;
 }
 
 @media screen and (min-width: 1440px) {
-  .logoutHeader {
-    font-family: "MacPaw Fixel Display", sans-serif;
-    font-weight: 500;
+  .logout {
     font-size: 16px;
-    line-height: 1.5;
     color: #121417;
+  }
+
+  .logoutHeader {
     display: flex;
-    align-items: center;
-    gap: 6px;
-    cursor: pointer;
-    flex-shrink: 0;
-    margin-block-start: 0;
-    margin-block-end: 0;
   }
 
   .arrowRightIcon {

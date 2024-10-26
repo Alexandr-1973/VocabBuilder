@@ -5,18 +5,7 @@ import { useState } from "react";
 import UserBar from "../UserBar/UserBar";
 import UserNav from "../UserNav/UserNav";
 import LogOut from "../LogOut/LogOut";
-
-// const customStyles = {
-//   content: {
-//     top: "50%",
-//     left: "50%",
-    
-//     bottom: "auto",
-//     marginRight: "-50%",
-    
-//     transform: "translate(-50%, -50%)",
-//   },
-// };
+import { IoClose } from "react-icons/io5";
 
 Modal.setAppElement("#root");
 
@@ -40,25 +29,26 @@ const NavMenu = () => {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        // style={customStyles}
-        // style={css.modal}
-        contentLabel="Example Modal"
+        style={{ overlay: { backgroundColor: "rgba(0, 0, 0, 0)" } }}
         className={css.modal}
       >
         <div className={css.userBarDiv}>
-        <UserBar/>
-        <button onClick={closeModal}>X</button>
+          <UserBar element="Modal" />
+
+          <IoClose onClick={closeModal} className={css.closeIcon} />
         </div>
-        <UserNav/>
-        <LogOut element="modal"/>
+        <div className={css.navLogDiv}>
+          <UserNav />
+          <LogOut element="Modal" />
+        </div>
         <picture className={css.img}>
           <source
             srcSet="/images/illustration-modal-mob-1x.jpg 1x, /images/illustration-modal-mob-2x.jpg 2x"
-            media="(min-width: 320px)"
+            media="(max-width: 767px)"
           />
           <source
             srcSet="/images/illustration-modal-tablet-1x.jpg 1x, /images/illustration-modal-tablet-2x.jpg 2x"
-            media="(mim-width: 768px)"
+            media="(min-width: 768px)"
           />
           <img
             src="/images/illustration-modal-mob-1x.jpg"

@@ -3,7 +3,7 @@ import css from "./LogOut.module.css";
 
 const LogOut = ({element}) => {
   return (
-    <p className={element==="header"?css.logoutHeader:css.logoutModal}>
+    <p className={`${css.logout} ${css[`logout${element}`]}`}>
       Log out
       <FaArrowRight className={css.arrowRightIcon} />
     </p>

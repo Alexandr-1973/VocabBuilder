@@ -1,27 +1,49 @@
+.linkHeader {
+  display: none;
+}
+
+.linksUl {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.link {
+  text-decoration: none;
+  font-family: "MacPaw Fixel Display", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #fcfcfc;
+}
+
+.linkActive {
+  text-decoration: none;
+  border-radius: 15px;
+  padding: 12px 20px;
+  width: 110px;
+  height: 43px;
+  background-color: #fcfcfc;
+  font-family: "MacPaw Fixel Display", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #121417;
+}
+
 @media screen and (min-width: 1440px) {
-  .linksUl {
+  .linkHeader {
     display: flex;
-    gap: 28px;
+  }
+
+  .linksUl {
+    flex-direction: row;
   }
 
   .link {
-    text-decoration: none;
-    font-family: "MacPaw Fixel Display", sans-serif;
-    font-weight: 500;
-    font-size: 14px;
     color: #121417;
   }
 
   .linkActive {
-    text-decoration: none;
-    border-radius: 15px;
-    padding: 12px 20px;
-    width: 110px;
-    height: 43px;
     background: #85aa9f;
-    font-family: "MacPaw Fixel Display", sans-serif;
-    font-weight: 500;
-    font-size: 14px;
     color: #fcfcfc;
   }
 }

@@ -5,7 +5,7 @@ import { LuEyeOff } from "react-icons/lu";
 import { LuEye } from "react-icons/lu";
 
 import * as yup from "yup";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const schemaRegistration = yup
@@ -35,11 +35,7 @@ const GenAuthFormPage = () => {
   const location = useLocation();
   const navigate=useNavigate();
 
-  // useEffect(() => {
-  //   location.pathname === "/login"
-  //     ? setAuthToggle(false)
-  //     : setAuthToggle(true);
-  // },[location]);
+  
 
   const {
     register,
