@@ -1,0 +1,73 @@
+.genDiv {
+	position: relative;
+	min-width: 164px;
+	/* max-width: 189px; */
+}
+
+
+
+.startCategoryDiv {
+	border: 1px solid rgba(18, 20, 23, 0.1);
+border-radius: 15px;
+padding-top: 12px;
+padding-bottom: 12px;
+padding-left: 24px;
+padding-right: 56px;
+/* width: 164px; */
+height: 48px;
+
+font-family: "MacPaw Fixel Display", sans-serif;
+font-weight: 500;
+font-size: 16px;
+line-height: 1.5;
+color: #121417;
+cursor: pointer;
+}
+
+.categoryUl {
+	position: absolute;
+	border-radius: 15px;
+padding: 12px 24px;
+min-width: 189px;
+/* height: 368px; */
+box-shadow: 0 4px 47px 0 rgba(18, 20, 23, 0.08);
+background: #fff;
+display: flex;
+flex-direction: column;
+gap: 8px;
+/* cursor: pointer; */
+/* flex-shrink: 0; */
+}
+
+.categoryP {
+	font-family: "MacPaw Fixel Display", sans-serif;
+font-weight: 500;
+font-size: 16px;
+line-height: 1.5;
+color: #121417;
+/* display: flex;
+flex-shrink: 1; */
+}
+
+.categoryLi {
+	cursor: pointer;
+	/* display: flex;
+	flex-shrink: 0; */
+}
+
+.arrow {
+	fill: #121417;
+/* stroke-width: 1.50px; */
+stroke: #121417;
+width: 20px;
+height: 20px;
+border: none;
+position: absolute;
+top: 14px;
+right: 24px;
+/* margin-left: 16px; */
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 0;
+}

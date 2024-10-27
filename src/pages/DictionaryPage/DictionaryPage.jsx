@@ -1,6 +1,13 @@
+import css from "./Dictionary.module.css"
+
+import Dashboard from "../../components/Dashboard/Dashboard";
+
+
 const DictionaryPage=()=>{
 	return (
-		<p>Dictionary</p>
+		<div className={css.genDiv}>
+			<Dashboard/>
+		</div>
 	)
 }
 
