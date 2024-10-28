@@ -1,19 +1,33 @@
 .genDiv {
-	display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
 }
-
-
 
 .findInput {
-	border: 1px solid rgba(18, 20, 23, 0.1);
-	border-radius: 15px;
-	padding: 12px 24px;
-	width: 274px;
-	height: 48px;
+  border: 1px solid rgba(18, 20, 23, 0.1);
+  border-radius: 15px;
+  padding: 12px 24px;
+  width: 274px;
+  height: 48px;
 
-	font-family: "MacPaw Fixel Display", sans-serif;
-font-weight: 500;
-font-size: 16px;
-line-height: 1.5;
-color: #121417;
+  font-family: "MacPaw Fixel Display", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #121417;
+  background-color: inherit;
 }
+
+.radioUl {
+  display: flex;
+  gap: 16px;
+}
+
+.radioLi {
+  display: flex;
+  gap: 8px;
+  cursor: pointer;
+}
+

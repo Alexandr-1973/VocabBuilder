@@ -1,0 +1,31 @@
+.radioDiv {
+  border: 2px solid rgba(18, 20, 23, 0.2);
+  border-radius: 10px;
+  width: 18px;
+  height: 18px;
+}
+
+.radioActiveDiv {
+  border-radius: 10px;
+  border: 2px solid #85aa9f;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radioActive {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #85aa9f;
+}
+
+.p {
+	font-family: "MacPaw Fixel Display", sans-serif;
+font-weight: 400;
+font-size: 14px;
+text-align: center;
+color: #121417;
+}
