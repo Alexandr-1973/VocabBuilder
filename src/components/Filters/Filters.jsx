@@ -21,7 +21,11 @@ const Filters = () => {
             <li
               key={index}
               className={css.radioLi}
-              onClick={() => setSelectedRadio(kindVerb)}
+              onClick={() =>
+                selectedRadio === kindVerb
+                  ? setSelectedRadio(null)
+                  : setSelectedRadio(kindVerb)
+              }
             >
               <CustomRadio
                 classRadio={
