@@ -6,7 +6,7 @@
   min-height: 228px;
 }
 
-.findInput {
+/* .findInput {
   border: 1px solid rgba(18, 20, 23, 0.1);
   border-radius: 15px;
   padding: 12px 24px;
@@ -17,7 +17,7 @@
   font-size: 16px;
   line-height: 1.5;
   color: #121417;
-}
+} */
 
 .trainUl {
   display: flex;
@@ -40,6 +40,7 @@
   line-height: 1.5;
   color: rgba(18, 20, 23, 0.5);
   align-items: baseline;
+  width: 100%;
 }
 
 .studyP {
@@ -91,4 +92,19 @@
   height: 20px;
   stroke: #85aa9f;
   stroke-width: 1.5px;
+}
+
+@media screen and (min-width:768px) {
+
+  .genDiv {
+
+    min-height:unset;
+    row-gap: 28px;
+
+  }
+
+  .studyLi {
+    width: unset;
+  }
+  
 }

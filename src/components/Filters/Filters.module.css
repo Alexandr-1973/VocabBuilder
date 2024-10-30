@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   gap: 8px;
   align-items: center;
+  margin-right: 70px;
   /* margin-bottom: 14px; */
 }
 
@@ -10,6 +11,7 @@
   border: 1px solid rgba(18, 20, 23, 0.1);
   border-radius: 15px;
   padding: 12px 24px;
+  padding-right: 44px;
   width: 100%;
   max-width: 343px;
   /* min-width: 250px; */
@@ -27,17 +29,40 @@
 .radioUl {
   display: flex;
   gap: 16px;
+  
+  /* display: none; */
 }
 
 .radioLi {
   display: flex;
   gap: 8px;
   cursor: pointer;
+  align-items: center;
+}
+
+.label {
+  position: relative;
+  width: 100%;
+  max-width: 343px;
+}
+
+.iconSearch {
+  position: absolute;
+  top: 14px;
+  right: 24px;
+  width: 20px;
+  height: 20px;
+  fill: #121417;
+  stroke-width: 0.5px;
 }
 
 @media screen and (min-width:768px) {
 
   .findInput {
+    width: 274px;
+  }
+
+  .label {
     width: 274px;
   }
   

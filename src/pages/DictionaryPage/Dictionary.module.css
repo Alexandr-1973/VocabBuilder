@@ -1,18 +1,25 @@
 
 .genDiv {
-	/* background-color: rgba(248, 248, 248, 1); */
+	background-color: rgba(248, 248, 248, 1);
 	padding-top: 32px;
 	padding-left: 16px;
 	padding-right: 16px;
 }
 
-
+@media screen and (min-width:768px) {
+	.genDiv {
+		/* background-color: rgba(248, 248, 248, 1); */
+		padding-top: 80px;
+		padding-left: 32px;
+		padding-right: 32px;
+	}
+}
 
 
 @media screen and (min-width:1440px) {
 	.genDiv {
-		background-color: rgba(248, 248, 248, 1);
-		padding-top: 80px;
+		/* background-color: rgba(248, 248, 248, 1); */
+		/* padding-top: 80px; */
 		padding-left: 100px;
 		padding-right: 100px;
 	}
