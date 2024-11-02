@@ -43,7 +43,7 @@
   }
 
   .linkActive {
-    background: #85aa9f;
+    background-color: #85aa9f;
     color: #fcfcfc;
   }
 }
