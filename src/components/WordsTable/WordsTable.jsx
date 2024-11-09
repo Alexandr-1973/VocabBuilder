@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import {
   useReactTable,
   getCoreRowModel,
@@ -10,19 +10,19 @@ import css from "./WordsTable.module.css"
 
 // Данные, получаемые с сервера (симуляция)
 const dataFromServer = [
-  { id: 1, name: "Alice", age: 25, city: "New York", job: "Engineer" },
-  { id: 2, name: "Bob", age: 30, city: "Los Angeles", job: "Designer" },
-  { id: 3, name: "Charlie", age: 35, city: "Chicago", job: "Teacher" },
-  { id: 4, name: "David", age: 40, city: "Houston", job: "Developer" },
-  { id: 5, name: "Emma", age: 28, city: "Phoenix", job: "Doctor" },
-  { id: 6, name: "Frank", age: 32, city: "Philad", job: "Artist" },
-  { id: 7, name: "Grace", age: 45, city: "San", job: "Nurse" },
+  { word: 1, translation: "Alice", category: 25, progress: "New York", edit: "Engineer" },
+  { word: 2, translation: "Bob", category: 30, progress: "Los Angeles", edit: "Designer" },
+  { word: 3, translation: "Charlie", category: 35, progress: "Chicago", edit: "Teacher" },
+  { word: 4, translation: "David", category: 40, progress: "Houston", edit: "Developer" },
+  { word: 5, translation: "Emma", category: 28, progress: "Phoenix", edit: "Doctor" },
+  { word: 6, translation: "Frank", category: 32, progress: "Philad", edit: "Artist" },
+  { word: 7, translation: "Grace", category: 45, progress: "San", edit: "Nurse" },
 ];
 
 // Инициализация Column Helper
 const columnHelper = createColumnHelper();
 
-function MyTable() {
+function WordsTable() {
   const data = useMemo(() => dataFromServer, []);
   const a=false;
 
@@ -30,30 +30,30 @@ function MyTable() {
     () => {
       
       const cols=[
-      columnHelper.accessor("id", {
+      columnHelper.accessor("word", {
         header: (
           <div className={css.wordDiv}>
             <p className={css.p}>Word</p>
-            {/* <svg className={css.icon}>
+            <svg className={css.icon}>
               <use href={`${sprite}#icon-united-kingdom`}></use>
-            </svg> */}
+            </svg>
           </div>
         ),
       }),
-      columnHelper.accessor("name", {
+      columnHelper.accessor("translation", {
         header: <div className={css.wordDiv}>
         <p className={css.p}>Translation</p>
-        {/* <svg className={css.icon}>
-          <use href={`${sprite}#icon-united-kingdom`}></use>
-        </svg> */}
+        <svg className={css.icon}>
+          <use href={`${sprite}#icon-ukraine`}></use>
+        </svg>
       </div>,
       }),
-     columnHelper.accessor("age", {
-      id:"age",
+     columnHelper.accessor("category", {
+      // id:"age",
         header: "Category",
-        cell: (info) => (info.getValue() > 30 ? info.getValue() : null),
+        // cell: (info) => (info.getValue() > 30 ? info.getValue() : null),
       }),
-      columnHelper.accessor("city", {
+      columnHelper.accessor("progress", {
         header: "Progress",
         // cell: (info) => (info.row.original.age > 30 ? info.getValue() : null),
       }),
@@ -63,7 +63,8 @@ function MyTable() {
       }),
     ]
 if (!a){
-  return cols.filter(column => column.id !== 'age')
+  return cols
+  //  cols.filter(column => column.id !== 'age')
 
 }
 return cols;
@@ -86,7 +87,7 @@ return cols;
   });
 
   return (
-    // <div className={css.genTableDiv}>
+    <div className={css.genTableDiv}>
     <table className={css.table} >
       <thead>
         {table.getHeaderGroups().map((headerGroup) => (
@@ -120,131 +121,8 @@ return cols;
         ))}
       </tbody>
     </table>
-    // </div>
+     </div>
   );
 }
 
-export default MyTable;
-
-// import DataTable from "react-data-table-component";
-// import "./WordsTable.css";
-// import sprite from "/images/icons.svg";
-
-// const columns = [
-//   {
-//     name: (
-//       <div className="titleDiv">
-//         Word
-//         {/* <p className="titleP">Word</p> */}
-//         <svg className="icon">
-//           <use href={`${sprite}#icon-united-kingdom`}></use>
-//         </svg>
-//         </div>
-//     ),
-//     selector: (row) => row.word,
-//     cell: (row) => <div className="cellDiv">{row.word} </div>,
-//   },
-//   {
-//     name: (
-//       <>
-//       {/* Translation */}
-//         <p>Translation</p>
-//         <svg className="icon">
-//           <use href={`${sprite}#icon-ukraine`}></use>
-//         </svg>
-//       </>
-//     ),
-//     selector: (row) => row.translation,
-//     cell: (row) => <div>{row.translation} </div>,
-//   },
-//   {
-//     name: "Category",
-//     selector: (row) => row.category,
-//     cell: (row) => <div>{row.category} </div>,
-//     // className: 'columnCategory'
-//   },
-//   {
-//     name: "Progress",
-//     selector: (row) => row.progress,
-//     cell: (row) => <div>{row.progress} </div>,
-//   },
-
-//   {
-//     name: "",
-//     selector: (row) => row.other,
-//     cell: (row) => <div>{row.other} </div>,
-//   },
-// ];
-
-// {
-//   /* <CustomCell value={row.other} /> */
-// }
-
-// const data = [
-//   {
-//     id: 1,
-//     word: "Beetlejuice",
-//     translation: "Привидение",
-//     category: "Фильм",
-//     progress: 80,
-//     other: "...",
-//   },
-//   {
-//     id: 2,
-//     word: "Inception",
-//     translation: "Начало",
-//     category: "Фильм",
-//     progress: 85,
-//     other: "...",
-//   },
-//   {
-//     id: 3,
-//     word: "Ghostbusters",
-//     translation: "Охотники за привидениями",
-//     category: "Фильм",
-//     progress: 90,
-//     other: "...",
-//   },
-//   {
-//     id: 4,
-//     word: "Beetlejuice",
-//     translation: "Привидение",
-//     category: "Фильм",
-//     progress: 80,
-//     other: "...",
-//   },
-//   {
-//     id: 5,
-//     word: "Inception",
-//     translation: "Начало",
-//     category: "Фильм",
-//     progress: 85,
-//     other: "...",
-//   },
-//   {
-//     id: 6,
-//     word: "Ghostbusters",
-//     translation: "Охотники за привидениями",
-//     category: "Фильм",
-//     progress: 90,
-//     other: "...",
-//   },
-//   {
-//     id: 7,
-//     word: "Ghostbusters",
-//     translation: "Охотники за привидениями",
-//     category: "Фильм",
-//     progress: 90,
-//     other: "...",
-//   },
-// ];
-
-// function WordsTable() {
-//   return (
-//     <div className="dataTableDiv">
-//       <DataTable columns={columns} data={data} />
-//     </div>
-//   );
-// }
-
-// export default WordsTable;
+export default WordsTable;

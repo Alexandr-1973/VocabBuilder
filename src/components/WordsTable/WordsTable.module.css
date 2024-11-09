@@ -1,3 +1,11 @@
+
+.genTableDiv {
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+
+
 .wordDiv {
   display: flex;
   align-items: center;
@@ -72,6 +80,10 @@
     
 }
 
+.icon {
+  display: none;
+}
+
 @media screen and (max-width:340px) {
 
   .p {
@@ -84,8 +96,10 @@ overflow-wrap: break-word;
 
 @media screen and (min-width: 768px) {
   .genTableDiv {
+    margin-bottom: 28px;
   }
   .icon {
+    display: block;
     width: 28px;
     height: 28px;
   }
@@ -97,140 +111,3 @@ overflow-wrap: break-word;
     height: 32px;
   }
 }
-
-/* .rdt_TableCol:nth-child(3) {
-  display: none;
-}
-.rdt_TableCell:nth-child(3) {
-  display: none;
-}
-
-.titleDiv {
-  min-width: 280px !important;
-  display: flex;
-  align-items: center;
-}
-
-.rdt_Table {
-  border-radius: 8px;
-  border-collapse: collapse;
-  border-bottom: 1px solid #dbdbdb;
-}
-
-.rdt_TableCol {
-  border-right: 1px solid #dbdbdb;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 14px !important;
-  padding-right: 14px !important;
-  background-color: rgba(133, 170, 159, 0.1);
-  font-family: "MacPaw Fixel Display", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  color: #121417;
-  min-width: 38px !important;
-}
-
-.rdt_TableCol:last-child {
-  border-right: none;
-
-  max-width: 50px;
-}
-
-.rdt_TableCell {
-  border-right: 1px solid #dbdbdb;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 14px !important;
-  padding-right: 14px !important;
-  background-color: #fcfcfc;
-  font-family: "MacPaw Fixel Display", sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  color: #121417;
-  display: flex;
-  flex-wrap: wrap;
-  min-width: 38px !important;
-}
-
-.rdt_TableCell:last-child {
-  border-right: none;
-
-  max-width: 50px;
-  justify-content: center;
-}
-
-.icon {
-  display: none;
-}
-
-@media screen and (min-width: 768px) {
-  .dataTableDiv {
-    border-radius: 15px;
-    padding: 18px;
-    width: 100%;
-    background-color: #fff;
-  }
-
-  .rdt_TableCol {
-    padding: 22px !important;
-
-    font-size: 18px;
-
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .rdt_TableCol:last-child {
-    max-width: 66px;
-  }
-
-  .rdt_TableCell {
-    padding: 22px !important;
-
-    font-size: 18px;
-  }
-
-  .rdt_TableCell:last-child {
-    max-width: 66px;
-  }
-
-  .rdt_TableCol:nth-child(3) {
-    display: flex;
-  }
-  .rdt_TableCell:nth-child(3) {
-    display: block;
-  }
-
-  .icon {
-    display: block;
-    width: 28px;
-    height: 28px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .rdt_TableCol {
-    font-size: 20px;
-
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .rdt_TableCol:last-child {
-    max-width: 136px;
-  }
-
-  .rdt_TableCell {
-    font-size: 20px;
-  }
-
-  .rdt_TableCell:last-child {
-    max-width: 136px;
-  }
-
-  .icon {
-    width: 32px;
-    height: 32px;
-  }
-} */
