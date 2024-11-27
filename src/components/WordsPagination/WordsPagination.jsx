@@ -1,7 +1,10 @@
 import { useState } from "react";
-// import css from "./WordsPagination.module.css"
-import "./WordsPagination.css";
+import css from "./WordsPagination.module.css";
 import { getPageNumbersPagination } from "../../utils/getPageNumbersPagination.js";
+import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
+import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 
 const WordsPagination = () => {
   const totalItems = 400; // Общее количество элементов
@@ -20,15 +23,18 @@ const WordsPagination = () => {
     return getPageNumbersPagination(currentPage, expandedRange, totalPages);
   };
 
- 
   return (
-    <ul className="pagination">
+    <ul className={css.pagination}>
       <li>
         <button
           onClick={() => handlePageChange(1)}
           disabled={currentPage === 1}
         >
-          ««
+          <MdOutlineKeyboardDoubleArrowLeft
+            className={`${css.arrowIcon} ${
+              currentPage === totalPages ? css.colourIcon : ""
+            }`}
+          />
         </button>
       </li>
       <li>
@@ -36,7 +42,7 @@ const WordsPagination = () => {
           onClick={() => currentPage > 1 && handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
         >
-          «
+          <MdOutlineKeyboardArrowLeft className={css.arrowIcon} />
         </button>
       </li>
 
@@ -53,7 +59,7 @@ const WordsPagination = () => {
           <li key={index}>
             <button
               onClick={() => typeof page === "number" && handlePageChange(page)}
-              className={page === currentPage ? "active" : ""}
+              className={page === currentPage ? css.active : ""}
             >
               {page}
             </button>
@@ -68,7 +74,7 @@ const WordsPagination = () => {
           }
           disabled={currentPage === totalPages}
         >
-          »
+          <MdOutlineKeyboardArrowRight className={css.arrowIcon} />
         </button>
       </li>
       <li>
@@ -76,7 +82,11 @@ const WordsPagination = () => {
           onClick={() => handlePageChange(totalPages)}
           disabled={currentPage === totalPages}
         >
-          »»
+          <MdOutlineKeyboardDoubleArrowRight
+            className={`${css.arrowIcon} ${
+              currentPage === 1 ? css.colourIcon : ""
+            }`}
+          />
         </button>
       </li>
     </ul>
@@ -84,98 +94,3 @@ const WordsPagination = () => {
 };
 
 export default WordsPagination;
-// const WordsPagination = () =>
-//   // { totalItems, itemsPerPage, onPageChange }
-//   {
-//     const totalItems = 100; // Общее количество элементов
-//     const itemsPerPage = 7; // Количество элементов на странице
-
-//     const totalPages = Math.ceil(totalItems / itemsPerPage);
-//     const [currentPage, setCurrentPage] = useState(1);
-
-//     const getPageNumbers = () => {
-//       const pageNumbers = [];
-//       const range = 2; // Диапазон страниц до и после текущей страницы
-
-//       // Если текущая страница дальше первой страницы + диапазон, добавляем первую страницу и троеточие
-//       if (currentPage > range + 2) {
-//         pageNumbers.push(1);
-//         pageNumbers.push("...");
-//       } else if (currentPage > range + 1) {
-//         pageNumbers.push(1);
-//       }
-
-//       // Добавляем страницы вокруг текущей страницы
-//       for (
-//         let i = Math.max(1, currentPage - range);
-//         i <= Math.min(totalPages, currentPage + range);
-//         i++
-//       ) {
-//         pageNumbers.push(i);
-//       }
-
-//       // Если текущая страница ближе к последней странице - диапазон, добавляем троеточие и последнюю страницу
-//       if (currentPage < totalPages - range - 1) {
-//         pageNumbers.push("...");
-//         pageNumbers.push(totalPages);
-//       } else if (currentPage < totalPages - range) {
-//         pageNumbers.push(totalPages);
-//       }
-
-//       return pageNumbers;
-//     };
-
-//     return (
-//       <ul className="pagination">
-//         <li>
-//           <button
-//             onClick={() => setCurrentPage(1)}
-//             disabled={currentPage === 1}
-//           >
-//             ««
-//           </button>
-//         </li>
-//         <li>
-//           <button
-//             onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}
-//             disabled={currentPage === 1}
-//           >
-//             «
-//           </button>
-//         </li>
-
-//         {getPageNumbers().map((page, index) => (
-//           <li key={index}>
-//             <button
-//               onClick={() => typeof page === "number" && setCurrentPage(page)}
-//               className={page === currentPage ? "active" : ""}
-//               disabled={page === "..."}
-//             >
-//               {page}
-//             </button>
-//           </li>
-//         ))}
-
-//         <li>
-//           <button
-//             onClick={() =>
-//               currentPage < totalPages && setCurrentPage(currentPage + 1)
-//             }
-//             disabled={currentPage === totalPages}
-//           >
-//             »
-//           </button>
-//         </li>
-//         <li>
-//           <button
-//             onClick={() => setCurrentPage(totalPages)}
-//             disabled={currentPage === totalPages}
-//           >
-//             »»
-//           </button>
-//         </li>
-//       </ul>
-//     );
-//   };
-
-// export default WordsPagination;

@@ -1,0 +1,50 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pagination button {
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: 1px solid rgba(18, 20, 23, 0.1);
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  font-weight: 600;
+  font-size: 13px;
+  font: 600 13px "MacPaw Fixel Display", sans-serif;
+  color: #121417;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: default;
+  /* fill: #85aa9f; */
+}
+
+.pagination button.active {
+  background-color: #6b9080;
+  color: white;
+  font-weight: bold;
+}
+
+.pagination button:hover:not(.active):not(:disabled) {
+  background-color: #f1f1f1;
+}
+
+.arrowIcon {
+  width: 16px;
+  height: 16px;
+  fill:#121417;
+}
+
+.colourIcon {
+  fill: #85aa9f;
+}

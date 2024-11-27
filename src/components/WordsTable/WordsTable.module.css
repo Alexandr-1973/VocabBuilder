@@ -1,10 +1,7 @@
-
 .genTableDiv {
   margin-bottom: 32px;
   width: 100%;
 }
-
-
 
 .wordDiv {
   display: flex;
@@ -14,7 +11,6 @@
 }
 
 .titleRow {
-  
 }
 
 .cell {
@@ -33,17 +29,13 @@
 
   background-color: rgba(133, 170, 159, 0.1);
   text-align: left;
-  
 }
-
-
 
 .titleRowCell:last-child {
   border-right: none;
 }
 
 .bodyRow {
-
 }
 
 .bodyCell {
@@ -56,7 +48,6 @@
   font-weight: 500;
   font-size: 14px;
   color: #121417;
-  
 }
 
 .bodyCell:last-child {
@@ -70,28 +61,23 @@
   overflow: hidden;
 }
 
-.p{
+.p {
   display: flex;
   flex-wrap: wrap;
   margin-block-start: 0;
-    margin-block-end: 0;
-
-  
-    
+  margin-block-end: 0;
 }
 
 .icon {
   display: none;
 }
 
-@media screen and (max-width:340px) {
-
+@media screen and (max-width: 340px) {
   .p {
     width: 50px;
-display: inline-block;
-overflow-wrap: break-word;
+    display: inline-block;
+    overflow-wrap: break-word;
   }
-  
 }
 
 @media screen and (min-width: 768px) {
@@ -110,4 +96,24 @@ overflow-wrap: break-word;
     width: 32px;
     height: 32px;
   }
+
+  .genTableDiv {
+    margin-bottom: 28px;
+    padding: 18px;
+    background-color: #fff;
+    border-radius: 15px;
+  }
+
+  .table {
+    /* border-collapse: collapse;
+  width: 100%; */
+    border-radius: 8px 8px 8px 8px;
+    /* overflow: hidden; */
+  }
+  /* .bodyRow:last-child {
+    border-radius: 8px 8px 8px 8px;
+  }
+  .bodyCell:last-child {
+    border-radius: 8px 8px 8px 8px;
+  } */
 }
