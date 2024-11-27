@@ -1,12 +1,14 @@
-.pagination {
+.genDiv {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
   gap: 10px;
 }
 
-.pagination button {
+.paginationContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.paginationButton {
   background-color: white;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -21,30 +23,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
 }
 
-.pagination button:disabled {
-  opacity: 0.5;
-  cursor: default;
-  /* fill: #85aa9f; */
+.activeButton {
+  background: #85aa9f;
+
+  color: #fff;
 }
 
-.pagination button.active {
-  background-color: #6b9080;
-  color: white;
-  font-weight: bold;
-}
-
-.pagination button:hover:not(.active):not(:disabled) {
-  background-color: #f1f1f1;
+.paginationButton > * {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .arrowIcon {
   width: 16px;
   height: 16px;
-  fill:#121417;
+  fill: #121417;
 }
 
-.colourIcon {
+.colorIcon {
   fill: #85aa9f;
+}
+
+.breakButton {
+  align-items: flex-end;
 }
