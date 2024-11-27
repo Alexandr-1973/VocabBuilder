@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import css from "./WordsPagination.module.css";
 import { getPageNumbersPagination } from "../../utils/getPageNumbersPagination.js";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
@@ -13,6 +13,17 @@ const WordsPagination = () => {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
   const [expandedRange, setExpandedRange] = useState(null); // Хранит состояние раскрытия для троеточий
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth); // Инициализируем с текущей ширины окна
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -20,7 +31,12 @@ const WordsPagination = () => {
   };
 
   const getPageNumbers = () => {
-    return getPageNumbersPagination(currentPage, expandedRange, totalPages);
+    return getPageNumbersPagination(
+      currentPage,
+      expandedRange,
+      totalPages,
+      windowWidth
+    );
   };
 
   return (
