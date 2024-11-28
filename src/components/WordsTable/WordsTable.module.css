@@ -72,6 +72,19 @@
   display: none;
 }
 
+.hiddenProgressRecommend {
+  display: none;
+}
+
+@media screen and (max-width:767px) {
+  
+  .hiddenProgressDict {
+    display: none;
+  }
+  
+}
+
+
 @media screen and (max-width: 340px) {
   .p {
     width: 50px;
@@ -117,3 +130,4 @@
     border-radius: 8px 8px 8px 8px;
   } */
 }
+

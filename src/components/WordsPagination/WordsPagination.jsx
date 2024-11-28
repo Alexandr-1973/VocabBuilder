@@ -18,6 +18,7 @@ const WordsPagination = () => {
 
   return (
     <div className={css.genDiv}>
+      {/* <div className={css.paginationWrapper}> */}
       <button
         className={css.paginationButton}
         onClick={() => setCurrentPage(0)}
@@ -40,7 +41,7 @@ const WordsPagination = () => {
         breakClassName={`${css.paginationButton} ${css.breakButton}`}
         previousLabel={<MdOutlineKeyboardArrowLeft className={css.arrowIcon} />} // Иконка "Назад"
         nextLabel={<MdOutlineKeyboardArrowRight className={css.arrowIcon} />} // Иконка "Вперед"
-        pageRangeDisplayed={3} // Количество видимых страниц
+        pageRangeDisplayed={window.innerWidth <= 767 ? 2 : 3} // Количество видимых страниц
         marginPagesDisplayed={1} // Количество страниц по краям
         forcePage={currentPage} // Принудительное обновление текущей страницы
         renderOnZeroPageCount={null}
@@ -55,6 +56,7 @@ const WordsPagination = () => {
           }`}
         />
       </button>
+      {/* </div> */}
     </div>
   );
 };

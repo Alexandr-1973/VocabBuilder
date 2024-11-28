@@ -1,11 +1,35 @@
+@media screen and (max-width: 340px) {
+  .genDiv {
+    width: 320px;
+  }
+}
+
+@media screen and (min-width: 341px) {
+  .genDiv {
+    width: 326px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .genDiv {
+    width: unset;
+  }
+}
+
 .genDiv {
   display: flex;
   gap: 10px;
+  /* flex-wrap: wrap; */
+  /* justify-content: center; */
+  /* width: 326px; */
+  overflow: scroll;
 }
 
 .paginationContainer {
   display: flex;
   gap: 10px;
+  /* flex-wrap: wrap; */
+  /* width: 242px; */
 }
 
 .paginationButton {
@@ -24,6 +48,7 @@
   justify-content: center;
   align-items: center;
   padding: 0;
+  flex-shrink: 0;
 }
 
 .activeButton {
