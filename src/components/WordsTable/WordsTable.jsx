@@ -8,6 +8,9 @@ import {
 import sprite from "/images/icons.svg";
 import css from "./WordsTable.module.css";
 import { useLocation } from "react-router-dom";
+// import ActionsBtn from "../ActionsBtn/ActionsBtn";
+import ProgressBar from "../ProgressBar/ProgressBar";
+import ActionsBtn from "../ActionsBtn/ActionsBtn";
 
 // Данные, получаемые с сервера (симуляция)
 const dataFromServer = [
@@ -15,49 +18,49 @@ const dataFromServer = [
     word: 1,
     translation: "Alice",
     category: 25,
-    progress: "New York",
+    progress: 10,
     edit: "Engineer",
   },
   {
     word: 2,
     translation: "Bob",
     category: 30,
-    progress: "Los Angeles",
+    progress: 20,
     edit: "Designer",
   },
   {
     word: 3,
     translation: "Charlie",
     category: 35,
-    progress: "Chicago",
+    progress: 30,
     edit: "Teacher",
   },
   {
     word: 4,
     translation: "David",
     category: 40,
-    progress: "Houston",
+    progress: 40,
     edit: "Developer",
   },
   {
     word: 5,
     translation: "Emma",
     category: 28,
-    progress: "Phoenix",
+    progress: 50,
     edit: "Doctor",
   },
   {
     word: 6,
     translation: "Frank",
     category: 32,
-    progress: "Philad",
+    progress: 60,
     edit: "Artist",
   },
   {
     word: 7,
     translation: "Grace",
     category: 45,
-    progress: "San",
+    progress: 70,
     edit: "Nurse",
   },
 ];
@@ -103,11 +106,19 @@ function WordsTable() {
         }),
         columnHelper.accessor("progress", {
           header: "Progress",
-          // cell: (info) => (info.row.original.age > 30 ? info.getValue() : null),
+          cell: ({ getValue }) => {
+            const value = getValue();
+            return (
+              <div className={css.progressDiv}>
+                <p className={css.progressP}>{value}%</p>
+                <ProgressBar value={value}/>
+              </div>
+            );
+          },
         }),
         columnHelper.accessor("job", {
           header: "",
-          cell: <p>...</p>,
+          cell: <ActionsBtn/>,
         }),
       ];
       if (!a) {

@@ -15,18 +15,16 @@
 
 .cell {
   border-spacing: 0;
+  font-family: "MacPaw Fixel Display", sans-serif;
+  font-weight: 500;
+  border-bottom: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb;
+  color: #121417;
 }
 
 .titleRowCell {
-  font-family: "MacPaw Fixel Display", sans-serif;
-  font-weight: 500;
   font-size: 16px;
-  color: #121417;
-  border-bottom: 1px solid #dbdbdb;
-  border-right: 1px solid #dbdbdb;
-
-  padding: 16px 14px 16px 14px;
-
+  padding: 16px 27px 16px 14px;
   background-color: rgba(133, 170, 159, 0.1);
   text-align: left;
 }
@@ -39,15 +37,9 @@
 }
 
 .bodyCell {
-  border-bottom: 1px solid #dbdbdb;
-  border-right: 1px solid #dbdbdb;
   padding: 16px 10px 16px 14px;
-
   background-color: #fcfcfc;
-  font-family: "MacPaw Fixel Display", sans-serif;
-  font-weight: 500;
   font-size: 14px;
-  color: #121417;
 }
 
 .bodyCell:last-child {
@@ -76,14 +68,28 @@
   display: none;
 }
 
-@media screen and (max-width:767px) {
+.progressDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.progressP {
+  display: none;
+}
+
+/* .circle {
+  width: 24px;
+  height: 24px;
   
+} */
+
+@media screen and (max-width: 767px) {
   .hiddenProgressDict {
     display: none;
   }
-  
 }
-
 
 @media screen and (max-width: 340px) {
   .p {
@@ -91,17 +97,37 @@
     display: inline-block;
     overflow-wrap: break-word;
   }
+
+  .titleRowCell {
+    padding-right: 14px;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .genTableDiv {
     margin-bottom: 28px;
+    padding: 18px;
+    background-color: #fff;
+    border-radius: 15px;
   }
   .icon {
     display: block;
     width: 28px;
     height: 28px;
   }
+
+  .cell {
+    padding: 22px;
+    font-size: 18px;
+  }
+  .progressP {
+    display: block;
+  }
+  /* .circle {
+    width: 26px;
+    height: 26px;
+    
+  } */
 }
 
 @media screen and (min-width: 1440px) {
@@ -111,23 +137,21 @@
   }
 
   .genTableDiv {
-    margin-bottom: 28px;
-    padding: 18px;
-    background-color: #fff;
-    border-radius: 15px;
   }
 
   .table {
-    /* border-collapse: collapse;
-  width: 100%; */
-    border-radius: 8px 8px 8px 8px;
-    /* overflow: hidden; */
-  }
-  /* .bodyRow:last-child {
     border-radius: 8px 8px 8px 8px;
   }
-  .bodyCell:last-child {
-    border-radius: 8px 8px 8px 8px;
-  } */
-}
 
+  .cell{
+    font-size: 20px;
+  }
+ 
+  
+
+  .progressDiv{
+   
+    justify-content: flex-start;
+    
+  }
+}
