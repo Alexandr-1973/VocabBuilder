@@ -24,7 +24,11 @@
 
 .titleRowCell {
   font-size: 16px;
-  padding: 16px 27px 16px 14px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 14px;
+  padding-right: 14px;
+  /* padding: 16px 14px 16px 14px; */
   background-color: rgba(133, 170, 159, 0.1);
   text-align: left;
 }
@@ -91,7 +95,7 @@
   }
 }
 
-@media screen and (max-width: 340px) {
+@media screen and (max-width: 374px) {
   .p {
     width: 50px;
     display: inline-block;
@@ -99,7 +103,8 @@
   }
 
   .titleRowCell {
-    padding-right: 14px;
+    padding-left: 8px;
+    padding-right: 6px;
   }
 }
 

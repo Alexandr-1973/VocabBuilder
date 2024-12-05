@@ -2,18 +2,16 @@ import "./App.css";
 import GenAuthFormPage from "./pages/GenAuthFormPage/GenAuthFormPage";
 import Header from "./components/Header/Header";
 import { Routes, Route, Navigate } from "react-router-dom";
-import DictionaryPage from "./pages/DictionaryPage/DictionaryPage";
-import RecommendPage from "./pages/RecommendPage/RecommendPage";
+import DictionaryRecommendPage from "./pages/DictionaryRecommendPage/DictionaryRecommendPage";
+
 import TrainingPage from "./pages/TrainingPage/TrainingPage";
 
 function App() {
-  const routes = ["/", "/register", "/login"];
-
   return (
     <>
       <Header />
       <Routes>
-        {routes.map((path, indx) => (
+        {["/", "/register", "/login"].map((path, indx) => (
           <Route
             key={indx}
             path={path}
@@ -23,8 +21,10 @@ function App() {
           />
         ))}
 
-        <Route path="/dictionary" element={<DictionaryPage />} />
-        <Route path="/recommend" element={<RecommendPage />} />
+        {["/dictionary", "/recommend"].map((path, indx) => (
+          <Route key={indx} path={path} element={<DictionaryRecommendPage />} />
+        ))}
+
         <Route path="/training" element={<TrainingPage />} />
       </Routes>
     </>

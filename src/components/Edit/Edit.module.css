@@ -1,0 +1,25 @@
+.edit {
+  font-family: "MacPaw Fixel Display", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #121417;
+  border: none;
+  background-color: inherit;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+
+.editIcon {
+  width: 16px;
+  height: 16px;
+  stroke: #85aa9f;
+}
+
+@media screen and (min-width: 768px) {
+  .edit {
+    font-size: 16px;
+  }
+}

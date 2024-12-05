@@ -1,16 +1,77 @@
 .genDiv {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-
+.popover {
+  margin-left: -20px;
+  margin-top: -2px;
+  /* margin-left: -90px;
+	margin-top: 8px; */
+  /* border-radius: 15px;
+  box-shadow: 0 4px 47px 0 rgba(18, 20, 23, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 24px; */
+  /* background-color: #fff; */
+}
 
 .actionsBtn {
-	font-family: "MacPaw Fixel Display", sans-serif;
-font-weight: 600;
-font-size: 18px;
-text-align: center;
-color: #121417;
+  font-family: "MacPaw Fixel Display", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  color: #121417;
+}
+
+/* .popoverDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 15px;
+  padding: 12px 24px;
+  
+  background: #fff;
+} */
+
+.popoverButton {
+  /* width: 76px; */
+  /* height: 24px; */
+  font-family: "MacPaw Fixel Display", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #121417;
+  border: none;
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.trashIcon {
+  width: 16px;
+  height: 16px;
+  stroke: #85aa9f;
+}
+
+@media screen and (min-width: 768px) {
+  .popoverButton {
+    font-size: 16px;
+  }
+
+  .popover {
+    margin-left: -90px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .popover {
+    margin-left: -90px;
+    margin-top: 8px;
+  }
 }

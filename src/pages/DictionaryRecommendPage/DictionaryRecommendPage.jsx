@@ -1,12 +1,14 @@
-import css from "./Dictionary.module.css";
+import css from "./DictionaryRecommendPage.module.css";
 
 import Dashboard from "../../components/Dashboard/Dashboard";
 import WordsTable from "../../components/WordsTable/WordsTable";
 import WordsPagination from "../../components/WordsPagination/WordsPagination";
 
+
 // import { useState } from "react";
 
-const DictionaryPage = () => {
+const DictionaryRecommendPage = () => {
+  
 
   
 	
@@ -22,4 +24,4 @@ const DictionaryPage = () => {
   );
 };
 
-export default DictionaryPage;
+export default DictionaryRecommendPage;

@@ -74,68 +74,70 @@ function WordsTable() {
   const location = useLocation();
   console.log(location);
 
-  const a = false;
+  // const a = false;
 
-  const columns = useMemo(
-    () => {
-      const cols = [
-        columnHelper.accessor("word", {
-          header: (
-            <div className={css.wordDiv}>
-              <p className={css.p}>Word</p>
-              <svg className={css.icon}>
-                <use href={`${sprite}#icon-united-kingdom`}></use>
-              </svg>
+  const columns = useMemo(() => {
+    const cols = [
+      columnHelper.accessor("word", {
+        header: (
+          <div className={css.wordDiv}>
+            <p className={css.p}>Word</p>
+            <svg className={css.icon}>
+              <use href={`${sprite}#icon-united-kingdom`}></use>
+            </svg>
+          </div>
+        ),
+      }),
+      columnHelper.accessor("translation", {
+        header: (
+          <div className={css.wordDiv}>
+            <p className={css.p}>Translation</p>
+            <svg className={css.icon}>
+              <use href={`${sprite}#icon-ukraine`}></use>
+            </svg>
+          </div>
+        ),
+      }),
+      columnHelper.accessor("category", {
+        // id:"age",
+        header: "Category",
+        // cell: (info) => (info.getValue() > 30 ? info.getValue() : null),
+      }),
+      columnHelper.accessor("progress", {
+        header: "Progress",
+        cell: ({ getValue }) => {
+          const value = getValue();
+          return (
+            <div className={css.progressDiv}>
+              <p className={css.progressP}>{value}%</p>
+              <ProgressBar value={value} />
             </div>
+          );
+        },
+      }),
+      columnHelper.accessor("job", {
+        header: "",
+        cell: () =>
+          location.pathname === "/dictionary" ? (
+            <ActionsBtn />
+          ) : location.pathname === "/recommend" ? (
+            <p>recommended</p>
+          ) : (
+            ""
           ),
-        }),
-        columnHelper.accessor("translation", {
-          header: (
-            <div className={css.wordDiv}>
-              <p className={css.p}>Translation</p>
-              <svg className={css.icon}>
-                <use href={`${sprite}#icon-ukraine`}></use>
-              </svg>
-            </div>
-          ),
-        }),
-        columnHelper.accessor("category", {
-          // id:"age",
-          header: "Category",
-          // cell: (info) => (info.getValue() > 30 ? info.getValue() : null),
-        }),
-        columnHelper.accessor("progress", {
-          header: "Progress",
-          cell: ({ getValue }) => {
-            const value = getValue();
-            return (
-              <div className={css.progressDiv}>
-                <p className={css.progressP}>{value}%</p>
-                <ProgressBar value={value}/>
-              </div>
-            );
-          },
-        }),
-        columnHelper.accessor("job", {
-          header: "",
-          cell: <ActionsBtn/>,
-        }),
-      ];
-      if (!a) {
-        return cols;
-        //  cols.filter(column => column.id !== 'age')
-      }
-      return cols;
-      // if (location.pathname === '/recommend') {
-      //   return cols.filter(column => column.id !== 'age'); // Убираем столбец 'age'
-      // }
+      }),
+    ];
+    // if (!a) {
+    //   return cols;
+    //   //  cols.filter(column => column.id !== 'age')
+    // }
+    return cols;
+    // if (location.pathname === '/recommend') {
+    //   return cols.filter(column => column.id !== 'age'); // Убираем столбец 'age'
+    // }
 
-      // return cols;
-    },
-    [
-      // location.pathname
-    ]
-  );
+    // return cols;
+  }, [location.pathname]);
 
   const table = useReactTable({
     data,
@@ -152,13 +154,15 @@ function WordsTable() {
               {headerGroup.headers.map((header, index) => (
                 <th
                   key={header.id}
-                  className={`${css.cell} ${css.titleRowCell} ${
-                    index === 2 && location.pathname === "/dictionary"
-                      ? css.hiddenProgressDict
-                      : location.pathname === "/recommend"
-                      ? css.hiddenProgressRecommend
-                      : ""
-                  }`}
+                  className={`${css.cell} ${css.titleRowCell}
+                   ${
+                     index === 2 && location.pathname === "/dictionary"
+                       ? css.hiddenProgressDict
+                       : index === 3 && location.pathname === "/recommend"
+                       ? css.hiddenProgressRecommend
+                       : ""
+                   }
+                  `}
                 >
                   {flexRender(
                     header.column.columnDef.header,
@@ -178,7 +182,7 @@ function WordsTable() {
                   className={`${css.cell} ${css.bodyCell} ${
                     index === 2 && location.pathname === "/dictionary"
                       ? css.hiddenProgressDict
-                      : location.pathname === "/recommend"
+                      : index === 3 && location.pathname === "/recommend"
                       ? css.hiddenProgressRecommend
                       : ""
                   }`}
