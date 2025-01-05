@@ -11,6 +11,7 @@ import { useLocation } from "react-router-dom";
 // import ActionsBtn from "../ActionsBtn/ActionsBtn";
 import ProgressBar from "../ProgressBar/ProgressBar";
 import ActionsBtn from "../ActionsBtn/ActionsBtn";
+import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
 // Данные, получаемые с сервера (симуляция)
 const dataFromServer = [
@@ -121,7 +122,10 @@ function WordsTable() {
           location.pathname === "/dictionary" ? (
             <ActionsBtn />
           ) : location.pathname === "/recommend" ? (
-            <p>recommended</p>
+            <button className={css.addDictBtn}>
+              <p className={css.addDictP}>Add to dictionary</p>
+              <HiOutlineArrowNarrowRight className={css.iconArrow} />
+            </button>
           ) : (
             ""
           ),

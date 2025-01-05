@@ -72,7 +72,7 @@
   display: none;
 }
 
-.progressDiv{
+.progressDiv {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,6 +88,25 @@
   height: 24px;
   
 } */
+
+.addDictP {
+  display: none;
+}
+
+.addDictBtn {
+  display: flex;
+  border: none;
+  background-color: inherit;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.iconArrow {
+  width: 20px;
+  height: 20px;
+  stroke: #85aa9f;
+  stroke-width: 1.5px;
+}
 
 @media screen and (max-width: 767px) {
   .hiddenProgressDict {
@@ -133,6 +152,18 @@
     height: 26px;
     
   } */
+  .addDictP {
+    display: unset;
+    font-family: "MacPaw Fixel Display", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #121417;
+  }
+
+  .addDictBtn {
+    gap: 8px;
+    flex-direction: column;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -148,15 +179,26 @@
     border-radius: 8px 8px 8px 8px;
   }
 
-  .cell{
+  .cell {
     font-size: 20px;
   }
- 
-  
 
-  .progressDiv{
-   
+  .progressDiv {
     justify-content: flex-start;
-    
+  }
+
+  .addDictBtn {
+    display: flex;
+    flex-direction: row;
+
+    /* align-items: baseline; */
+    border: none;
+    background-color: inherit;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .addDictP {
+    font-size: 16px;
   }
 }
