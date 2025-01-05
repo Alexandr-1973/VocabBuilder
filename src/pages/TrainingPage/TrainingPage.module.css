@@ -86,7 +86,7 @@
 @media screen and (min-width: 768px) {
   .pictureDiv {
     height: 290px;
-	width: 260px;
+    width: 260px;
     background-image: url(/images/blood-report-tab1.png);
   }
 
@@ -138,21 +138,14 @@
   }
 }
 @media screen and (min-width: 1440px) {
+  .emptyDiv {
+    padding: 193px 269px 230px 269px;
+    flex-direction: row;
+  }
 
-	.emptyDiv {
-		padding: 193px 269px 230px 269px;
-		flex-direction: row;
-	  }
-
-	.textDiv {
-		padding-left: 25px;
-		padding-top: 18px;
-		padding-bottom: 18px;
-	}  
-
-	/* .pictureDiv {
-		height: 290px;
-		width: 260px;
-	} */
-	
+  .textDiv {
+    padding-left: 25px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
 }
